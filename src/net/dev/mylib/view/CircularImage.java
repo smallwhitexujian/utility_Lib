@@ -7,6 +7,10 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 
+/**
+ * @author xujian
+ * 圆形头像
+ */
 public class CircularImage extends MaskedImage {
 	public CircularImage(Context paramContext) {
 		super(paramContext);

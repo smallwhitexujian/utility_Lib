@@ -37,12 +37,12 @@ public class DebugLogs {
     public static boolean allowWtf = isDebug;
 
     private static String generateTag(StackTraceElement caller) {
-//        String tag = "%s.%s(Line:%d)"; // 占位符
-//        String callerClazzName = caller.getClassName(); // 获取到类名
-//        callerClazzName = callerClazzName.substring(callerClazzName.lastIndexOf(".") + 1);
-//        tag = String.format(tag, callerClazzName, caller.getMethodName(),caller.getLineNumber()); // 替换
-//        tag = TextUtils.isEmpty(customTagPrefix) ? tag : customTagPrefix + ":" + tag;
-    	String tag = "xujian";
+        String tag = "%s.%s(Line:%d)"; // 占位符
+        String callerClazzName = caller.getClassName(); // 获取到类名
+        callerClazzName = callerClazzName.substring(callerClazzName.lastIndexOf(".") + 1);
+        tag = String.format(tag, callerClazzName, caller.getMethodName(),caller.getLineNumber()); // 替换
+        tag = TextUtils.isEmpty(customTagPrefix) ? tag : customTagPrefix + ":" + tag;
+    	//String tag = "xujian";
         return tag;
     }
 
