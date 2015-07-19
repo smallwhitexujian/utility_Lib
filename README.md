@@ -1,4 +1,4 @@
-# utility_Lib
+# utility_Lib(这个格式不会调整 也就这样了把)
 Android_快速开发框架
 为了解决在项目开发中重复写代码问题，所以利用空余时间整理了这个lib.
 Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化，下面看一个简单地post请求示例。在项目普遍用post请求居多
