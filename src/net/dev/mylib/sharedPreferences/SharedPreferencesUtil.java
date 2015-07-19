@@ -6,6 +6,10 @@ import android.content.SharedPreferences;
 import java.util.ArrayList;  
 import java.util.Set;
 
+/**
+ * @author xujian
+ * SharedPreferencesUtil
+ */
 public class SharedPreferencesUtil {
     private static final String SHAREDPREFERENCE_NAME = "sharedpreferences_xj";  
   

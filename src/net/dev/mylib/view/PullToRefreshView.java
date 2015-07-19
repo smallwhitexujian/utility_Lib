@@ -20,6 +20,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 
+/**
+ * @author xujian
+ * listView 和 ScrollView加载更多和刷新
+ */
 public class PullToRefreshView extends LinearLayout {
 	private static final String TAG = "PullToRefreshView";
 	// refresh states
