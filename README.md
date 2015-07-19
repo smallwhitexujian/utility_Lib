@@ -4,12 +4,14 @@ Android_快速开发框架
 Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化，下面看一个简单地post请求示例。在项目普遍用post请求居多
 源文件请看：net.dev.mylib.netWorkUtil.GitJson.java（名字有点丑别见怪哈）
 
- Map<String, String> params = new HashMap<String, String>();
- params.put("userId", "userId");
- GetJson.Callback callback = new GetJson.Callback() {
+  Map<String, String> params = new HashMap<String, String>();
+  params.put("userId", "userId");
+  GetJson.Callback callback = new GetJson.Callback() {
+ 
             @Override
             public void onFinish(String response) {
                //TODO 这里直接处理返回结果response
+               DebugLogs.e("------response-" + response.toString());
             }
 
             @Override
@@ -18,8 +20,8 @@ Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化�
                 DebugLogs.e("------error-" + error.toString());
             }
         };
-  GetJson GetJson = new GetJson(Context, callback, true, "正在努力加载中...");
-  GetJson.setConnection(Request.Method.POST, "www.baidu.com", params);
+   GetJson GetJson = new GetJson(Context, callback, true, "正在努力加载中...");
+   GetJson.setConnection(Request.Method.POST, "www.baidu.com", params);
   
   看了以上代码有没有觉得，哇请求原来也可以这么简单。（不必要重复去每次都要复制很多，并且也容易错，）
   ------->光有了请求是无法满足我们这群懒人的，嘿嘿。当然大家都懂 需要一个解析json工具，当然我们怎么会错误放弃这个必要重要的东西呢。
