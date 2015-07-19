@@ -3,6 +3,7 @@ Android_快速开发框架
 为了解决在项目开发中重复写代码问题，所以利用空余时间整理了这个lib.
 Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化，下面看一个简单地post请求示例。在项目普遍用post请求居多
 源文件请看：net.dev.mylib.netWorkUtil.GitJson.java（名字有点丑别见怪哈）
+
  Map<String, String> params = new HashMap<String, String>();
  params.put("userId", "userId");
  GetJson.Callback callback = new GetJson.Callback() {
@@ -19,10 +20,12 @@ Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化�
         };
   GetJson GetJson = new GetJson(Context, callback, true, "正在努力加载中...");
   GetJson.setConnection(Request.Method.POST, "www.baidu.com", params);
+  
   看了以上代码有没有觉得，哇请求原来也可以这么简单。（不必要重复去每次都要复制很多，并且也容易错，）
   ------->光有了请求是无法满足我们这群懒人的，嘿嘿。当然大家都懂 需要一个解析json工具，当然我们怎么会错误放弃这个必要重要的东西呢。
   我们来看如何进行简单JSON解析这里简化了json解析，原先每次请求过来都需要一层一层的解析 还得做好防护，现在福利来了。请看JsonUtil.java
   这里也是直接将Google提供的Gson进行简单封装了。方便做解析。
+
   public static <T> T fromJson(String json, Type typeOfT) {
         try {
            return new Gson().fromJson(json, typeOfT);
@@ -31,8 +34,10 @@ Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化�
         }
         return null;
     }
+
   那么如何使用呢：
   //简单Model
+
   public class ModifyEntity implements Serializable{
       private String userId;
       public String getUserId(){
@@ -43,7 +48,9 @@ Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化�
       }
   }
   ModifyEntity entity = JsonUtil.fromJson(response, ModifyEntity.class);
-  String userId = entity.getUserId().toString();//看这样我们就可以进行一层解析，方便吧 神奇吧，嘿嘿，
+  String userId = entity.getUserId().toString();
+
+//看这样我们就可以进行一层解析，方便吧 神奇吧，嘿嘿，
   
   多层解析-----.
   public class Entity implements Serializable{
@@ -54,6 +61,7 @@ Utility_Lib集成了封装了Google_Volley请求，将复杂的请求简单化�
       String state = result.state;
       String message = result.message;
 }
+
 重要的请求和解析都搞完了。剩下就是愉快的写代码的。
 一下就是一些简单目录
 /**
